@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+
+	.nav-tabs > li, .nav-pills > li {
+    float:none;
+    display:inline-block;
+    *display:inline;
+    zoom:1;
+}
+.nav>li>a:hover,
+
+.nav>li>a:focus{
+
+ background-color: white;}
+.nav-tabs, .nav-pills {
+    text-align:center;
+    }
+td:nth-child(1) {
+    padding-right: 20px;
+}​
+
+</style>
+</head>
+<body>
+
+<div class="container"><br>
+
+
+
+  <ul class="nav nav-pills">
+    <li class="active"><a data-toggle="pill" href="#home">System</a></li>
+    <li><a data-toggle="pill" href="#menu1">Menu</a></li>
+    <li><a data-toggle="pill" href="#menu2">Inventory</a></li>
+    <li><a data-toggle="pill" href="#menu3">Log</a></li>
+  </ul>
+  
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+    <BR><BR>
+    <CENTER>
+      <p>UPTIME 365:11:15:30</p>
+       <p>LAST SERVER CONTACT 365:11:15:30</p><br>
+        <form action ='/system_update', method = 'post'>
+        <P>API KEY  <input type="text" name="key" size="36"></P> <BR>
+        <input type="submit" value="PI SYSTEM UPDATE">
+        </form>
+       </CENTER>
+    </div>
+
+
+
+    <div id="menu1" class="tab-pane fade">
+<br><br>
+<CENTER>
+  <form action = '/save' method = 'post'>
+    <table>
+	  <tr>
+	  	  <td >THEME</td>
+		  <td style="padding-right: 25px"><select name="theme">
+            <option value="Green">Green Rush</option>
+            <option value="Esssence">Esssence</option>
+            </select><br><br></td>
+	  </tr>
+
+	  <tr>
+		  <td>GOOGLE FONT</td>
+		  <td style="padding-right: 25px"><select name="gfont">
+            <option value="Green">ARIAL</option>
+            <option value="Esssence">ARIAL NARROW</option>
+            </select><br><br></td>
+	  </tr>
+
+	  <tr>
+		  <td>FONT SIZE</td>
+		  <td><input type="text" name="fsize" size="10" value=""><br><br></td>
+	  </tr>
+
+	  <tr>
+	  	  <td>FONT COLOR</td>
+		  <td><input type="text" name="fcolor" size="10" value=""><br><br></td>
+	  </tr>
+
+	  <tr>
+		  <td>SCROLL RATE </td>
+		  <td><input type="text" name="scrollrate" size="10" value=""><br><br></td>
+	  </tr>
+
+      <tr>
+          <td>UPDATE MENU</td>
+		  <td><select name="upmenu">
+            <option value="Green" size="8">1MIN</option>
+            </select><br><br></td>
+	  </tr>
+    </table>
+    <br>
+    <p>CATEGORIES TO DISPLAY</p>
+    <input type="submit" value="save">
+  </form>
+</CENTER>
+    </div>
+
+
+    <div id="menu2" class="tab-pane fade">
+<br>
+<table style="width:100%">
+  <tr>
+    <th>id</th>
+    <th>name</th> 
+    <th>conobis_brand</th>
+    <th>conobis_stroin</th>
+    <th>category</th> 
+    <th>subcategory</th>
+    <th>thc_level</th>
+    <th>cbd_level</th> 
+    <th>cbn_level</th>
+  </tr>
+  <tr>
+    <td>132561</td>
+    <td>Maxie Battery</td>
+    <td></td>
+    <td>other</td>
+    <td></td>
+    <td>%</td>
+    <td>%</td>
+    <td>%</td>
+    <td></td>
+  </tr>
+    <tr>
+    <td>132562</td>
+    <td>Zico Torch lighter</td>
+    <td></td>
+    <td>other</td>
+    <td></td>
+    <td>%</td>
+    <td>%</td>
+    <td>%</td>
+    <td></td>
+  </tr>
+    <tr>
+    <td>132563</td>
+    <td>Scorch Torch lighter</td>
+    <td></td>
+    <td>other</td>
+    <td></td>
+    <td>%</td>
+    <td>%</td>
+    <td>%</td>
+    <td></td>
+  </tr>
+    <tr>
+    <td>132567</td>
+    <td>Rokin Disposoble Concentrote Pen</td>
+    <td></td>
+    <td>Topicols</td>
+    <td></td>
+    <td>%</td>
+    <td>%</td>
+    <td>%</td>
+    <td></td>
+  </tr>
+    </tr>
+    <tr>
+    <td>132570</td>
+    <td>Elite CBD Patches</td>
+    <td></td>
+    <td>Topicols</td>
+    <td></td>
+    <td></td>
+    <td>%</td>
+    <td>%</td>
+    <td>%</td>
+  </tr>
+     <tr>
+    <td>132571</td>
+    <td>Elite CBD Patches</td>
+    <td></td>
+    <td>Topicols</td>
+    <td></td>
+    <td></td>
+    <td>%</td>
+    <td>%</td>
+    <td>%</td>
+  </tr>
+      <tr>
+    <td>132572</td>
+    <td>Coffee Scrub</td>
+    <td></td>
+    <td>Topicols</td>
+    <td></td>
+    <td></td>
+    <td>%</td>
+    <td>%</td>
+    <td>%</td>
+  </tr>
+      <tr>
+    <td>132576</td>
+    <td>CBD Body Scrub</td>
+    <td></td>
+    <td>Topicols</td>
+    <td></td>
+    <td></td>
+    <td>%</td>
+    <td>%</td>
+    <td>%</td>
+  </tr>
+    <tr>
+    <td>132561</td>
+    <td>Maxie Battery</td>
+    <td></td>
+    <td>other</td>
+    <td></td>
+    <td>%</td>
+    <td>%</td>
+    <td>%</td>
+    <td></td>
+  </tr>
+    <tr>
+    <td>132562</td>
+    <td>Zico Torch lighter</td>
+    <td></td>
+    <td>other</td>
+    <td></td>
+    <td>%</td>
+    <td>%</td>
+    <td>%</td>
+    <td></td>
+  </tr>
+    <tr>
+    <td>132563</td>
+    <td>Scorch Torch lighter</td>
+    <td></td>
+    <td>other</td>
+    <td></td>
+    <td>%</td>
+    <td>%</td>
+    <td>%</td>
+    <td></td>
+  </tr>
+      <tr>
+    <td>132579</td>
+    <td>AMA CBD Infused Body Lotion</td>
+    <td></td>
+    <td>Topicols</td>
+    <td></td>
+    <td></td>
+    <td>%</td>
+    <td>%</td>
+    <td>%</td>
+  </tr>
+      <tr>
+    <td>132570</td>
+    <td>Elite CBD Patches</td>
+    <td></td>
+    <td>Topicols</td>
+    <td></td>
+    <td></td>
+    <td>%</td>
+    <td>%</td>
+    <td>%</td>
+  </tr>
+      <tr>
+    <td>132570</td>
+    <td>Elite CBD Patches</td>
+    <td></td>
+    <td>Topicols</td>
+    <td></td>
+    <td></td>
+    <td>%</td>
+    <td>%</td>
+    <td>%</td>
+  </tr>
+      <tr>
+    <td>132570</td>
+    <td>Elite CBD Patches</td>
+    <td></td>
+    <td>Topicols</td>
+    <td></td>
+    <td></td>
+    <td>%</td>
+    <td>%</td>
+    <td>%</td>
+  </tr>
+      <tr>
+    <td>132570</td>
+    <td>Elite CBD Patches</td>
+    <td></td>
+    <td>Topicols</td>
+    <td></td>
+    <td></td>
+    <td>%</td>
+    <td>%</td>
+    <td>%</td>
+  </tr>
+      <tr>
+    <td>132570</td>
+    <td>Elite CBD Patches</td>
+    <td></td>
+    <td>Topicols</td>
+    <td></td>
+    <td></td>
+    <td>%</td>
+    <td>%</td>
+    <td>%</td>
+  </tr>
+      <tr>
+    <td>132570</td>
+    <td>Elite CBD Patches</td>
+    <td></td>
+    <td>Topicols</td>
+    <td></td>
+    <td></td>
+    <td>%</td>
+    <td>%</td>
+    <td>%</td>
+  </tr>
+      <tr>
+    <td>132570</td>
+    <td>Elite CBD Patches</td>
+    <td></td>
+    <td>Topicols</td>
+    <td></td>
+    <td></td>
+    <td>%</td>
+    <td>%</td>
+    <td>%</td>
+  </tr>
+      <tr>
+    <td>132570</td>
+    <td>Elite CBD Patches</td>
+    <td></td>
+    <td>Topicols</td>
+    <td></td>
+    <td></td>
+    <td>%</td>
+    <td>%</td>
+    <td>%</td>
+  </tr>
+      <tr>
+    <td>132570</td>
+    <td>Elite CBD Patches</td>
+    <td></td>
+    <td>Topicols</td>
+    <td></td>
+    <td></td>
+    <td>%</td>
+    <td>%</td>
+    <td>%</td>
+  </tr>
+      <tr>
+    <td>132570</td>
+    <td>Elite CBD Patches</td>
+    <td></td>
+    <td>Topicols</td>
+    <td></td>
+    <td></td>
+    <td>%</td>
+    <td>%</td>
+    <td>%</td>
+  </tr>
+      <tr>
+    <td>132570</td>
+    <td>Elite CBD Patches</td>
+    <td></td>
+    <td>Topicols</td>
+    <td></td>
+    <td></td>
+    <td>%</td>
+    <td>%</td>
+    <td>%</td>
+  </tr>
+      <tr>
+    <td>132570</td>
+    <td>Elite CBD Patches</td>
+    <td></td>
+    <td>Topicols</td>
+    <td></td>
+    <td></td>
+    <td>%</td>
+    <td>%</td>
+    <td>%</td>
+  </tr>
+    <tr>
+    <td>132561</td>
+    <td>Maxie Battery</td>
+    <td></td>
+    <td>other</td>
+    <td></td>
+    <td>%</td>
+    <td>%</td>
+    <td>%</td>
+    <td></td>
+  </tr>
+    <tr>
+    <td>132562</td>
+    <td>Zico Torch lighter</td>
+    <td></td>
+    <td>other</td>
+    <td></td>
+    <td>%</td>
+    <td>%</td>
+    <td>%</td>
+    <td></td>
+  </tr>
+    <tr>
+    <td>132563</td>
+    <td>Scorch Torch lighter</td>
+    <td></td>
+    <td>other</td>
+    <td></td>
+    <td>%</td>
+    <td>%</td>
+    <td>%</td>
+    <td></td>
+  </tr>
+      <tr>
+    <td>132570</td>
+    <td>Elite CBD Patches</td>
+    <td></td>
+    <td>Topicols</td>
+    <td></td>
+    <td></td>
+    <td>%</td>
+    <td>%</td>
+    <td>%</td>
+  </tr>
+        <tr>
+    <td>132570</td>
+    <td>Elite CBD Patches</td>
+    
+  </tr>
+          <tr>
+    <td>132575</td>
+    <td> CBD Patches</td>
+            <tr>
+    <td>132670</td>
+    <td>Elite  Patches</td>
+    
+  </tr>
+          <tr>
+    <td>132570</td>
+    <td>Elite CBD Patches</td>
+    
+  </tr>
+          <tr>
+    <td>132575</td>
+    <td> CBD Patches</td>
+            <tr>
+    <td>132670</td>
+    <td>Elite  Patches</td>
+    
+  </tr>
+          <tr>
+    <td>132570</td>
+    <td>Elite CBD Patches</td>
+    
+  </tr>
+          <tr>
+    <td>132575</td>
+    <td> CBD Patches</td>
+            <tr>
+    <td>132670</td>
+    <td>Elite  Patches</td>
+    
+  </tr>
+          <tr>
+    <td>132570</td>
+    <td>Elite CBD Patches</td>
+    
+  </tr>
+          <tr>
+    <td>132575</td>
+    <td> CBD Patches</td>
+            <tr>
+    <td>132670</td>
+    <td>Elite  Patches</td>
+    
+  </tr>
+    
+  </tr>
+
+</table>
+
+</body>
+</html>
+
+    
+    </div>
+
+
+
+    <div id="menu3" class="tab-pane fade">
+     <CENTER> <h3>DOWNLOAD LOG</h3></CENTER>
+       <TABLE>
+       	<TR>
+       		<TD style="padding-right: 25px">06/26/2017</TD>
+       		<TD style="padding-right: 25px">00:00:00</TD>
+       		<TD >MENU UPDATE SUCESSFUL</TD>
+       	</TR>
+
+       	<TR>
+       		<TD style="padding-right: 25px">06/26/2017</TD>
+       		<TD style="padding-right: 25px">00:00:00</TD>
+       		<TD > INTERNET UNAVAILABLE</TD>
+       	</TR>
+
+       	<TR>
+       		<TD style="padding-right: 25px">06/26/2017</TD>
+       		<TD style="padding-right: 25px">00:00:00</TD>
+       		<TD >INTERNET UNAVAILABLE</TD>
+       	</TR>
+
+       	<TR>
+       		<TD style="padding-right: 25px">06/26/2017</TD>
+       		<TD style="padding-right: 25px">00:00:00</TD>
+       		<TD >MENU UPDATE SUCESSFUL</TD>
+       	</TR>
+
+       	<TR>
+       		<TD style="padding-right: 25px">06/26/2017</TD>
+       		<TD style="padding-right: 25px">00:00:00</TD>
+       		<TD >MENU UPDATE SUCESSFUL</TD>
+       	</TR>
+
+       	<TR>
+       		<TD style="padding-right: 25px">06/26/2017</TD>
+       		<TD style="padding-right: 25px">00:00:00</TD>
+       		<TD >MENU UPDATE SUCESSFUL</TD>
+       	</TR>
+
+       	<TR>
+       		<TD style="padding-right: 25px">06/26/2017</TD>
+       		<TD style="padding-right: 25px">00:00:00</TD>
+       		<TD >MENU UPDATE SUCESSFUL</TD>
+       	</TR>
+
+       	<TR>
+       		<TD style="padding-right: 25px">06/26/2017</TD>
+       		<TD style="padding-right: 25px">00:00:00</TD>
+       		<TD >MENU UPDATE SUCESSFUL</TD>
+       	</TR>
+
+       	<TR style="padding-right: 25px">
+       		<TD style="padding-right: 25px">06/26/2017</TD>
+       		<TD style="padding-right: 25px">00:00:00</TD>
+       		<TD >MENU UPDATE SUCESSFUL</TD>
+       	</TR>
+
+       	<TR>
+       		<TD style="padding-right: 25px">06/26/2017</TD>
+       		<TD style="padding-right: 25px">00:00:00</TD>
+       		<TD >MENU UPDATE SUCESSFUL</TD>
+       	</TR>
+
+       	<TR>
+       		<TD style="padding-right: 25px">06/26/2017</TD>
+       		<TD style="padding-right: 25px">00:00:00</TD>
+       		<TD style="padding-right: 25px">MENU UPDATE SUCESSFUL</TD>
+       	</TR>
+
+       </TABLE>
+    </div>
+  </div>
+</div>
+</body>
+</html>
