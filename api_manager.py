@@ -4,7 +4,7 @@
 import requests
 import json
 import traceback
-
+from utils import flog
 
 class ApiManager:
 
@@ -16,14 +16,14 @@ class ApiManager:
         function gets access token from greenrush server
         """
         url = 'https://www.greenrush.com/api/v2/authorize'
-        #token = '$2y$10$ehNDTqORidMNnL4xDW.bTemFH3/YENp7qzlrXRRx971tielybhNE6'
+        # token = '$2y$10$ehNDTqORidMNnL4xDW.bTemFH3/YENp7qzlrXRRx971tielybhNE6'
         try:
             headers = {'accept': 'application/vnd.greenrush.v2+json',
                        'content-type': 'application/json'}
             data = {"token": self.key}
 
             print "data:", data
-
+            flog(data)
             r = requests.post(url, headers=headers, data=json.dumps(data))
             print r.status_code
             print r.headers
@@ -60,7 +60,11 @@ class ApiManager:
         return xml
 
 if __name__ == '__main__':
-    key = '$2y$10$ehNDTqORidMNnL4xDW.bTemFH3/YENp7qzlrXRRx971tielybhNE6'
+    key  = '$2y$10$ehNDTqORidMNnL4xDW.bTemFH3/YENp7qzlrXRRx971tielybhNE6'
+    key1 = '$2y$10$p7Qen.w99bi3AhR/NqmOyuQwScsL9QdxdCXYFi4txlmbWjPjetJ4u'
+    key2 = '$2y$10$6xy4ujuz.yueNGsOuy/2X.Pimjkc.r4vzT.DGW6TXK90k4KXuF0IC'
+    key3 = '$2y$10$Ha9YK6KyW2vYvi3aauby0O.4Z5AOFQBay3qiy3I/ohyrtoKM7HH.q'
+    key4 = '$2y$10$OcExnZCLy4AVrOLp5/1oj.sQtAx86ywu5jGLBzEGngJK8ukQMdgBO'
     am = ApiManager(key)
     token = am.get_token()
     am.get_products_xml(token, 10)

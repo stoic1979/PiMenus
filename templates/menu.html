@@ -486,8 +486,6 @@ td:nth-child(1) {
 
 </table>
 
-</body>
-</html>
 
     
     </div>
@@ -496,7 +494,16 @@ td:nth-child(1) {
 
     <div id="menu3" class="tab-pane fade">
      <CENTER> <h3>DOWNLOAD LOG</h3></CENTER>
-       <TABLE>
+      <div id="list">
+        <p>
+    {% for log in logs %}
+
+          {{ log }} <br>
+
+          {% endfor %}
+        </p>
+
+       <!--TABLE>
        	<TR>
        		<TD style="padding-right: 25px">06/26/2017</TD>
        		<TD style="padding-right: 25px">00:00:00</TD>
@@ -563,7 +570,7 @@ td:nth-child(1) {
        		<TD style="padding-right: 25px">MENU UPDATE SUCESSFUL</TD>
        	</TR>
 
-       </TABLE>
+       </TABLE-->
     </div>
   </div>
 </div>

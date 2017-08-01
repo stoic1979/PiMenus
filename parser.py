@@ -108,7 +108,7 @@ class Parser:
 
 
 if __name__ == '__main__':
-    parser = Parser('latest.xml')
+    parser = Parser('test_xml.xml')
     get_data = parser.get_all_data()
     for data in get_data:
         data.show_data_details()

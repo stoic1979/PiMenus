@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 import traceback
 from api_manager import ApiManager
+from utils import read_logs, flog
 # from data import get_vapes, get_syringes, get_accessories, get_concentrates, \
 #    get_other, get_cat, get_satvia_first, get_satvia_second
 
@@ -10,13 +11,14 @@ app = Flask(__name__)
 
 @app.route("/menu")
 def menu():
-    templateData = {'title': 'Menu'}
+    templateData = {'title': 'Menu', 'logs': read_logs()}
     return render_template("menu.html", **templateData)
 
 
 @app.route('/system_update', methods=['POST'])
 def system_update():
     try:
+        flog("SYSTEM UPDATE")
         print '======================', request.form
         key = request.form['key']
 
@@ -47,6 +49,10 @@ def save():
         print('save() :: Got exception: %s' % exp)
         print(traceback.format_exc())
     return 'save'
+
+
+def log():
+    pass
 
 
 if __name__ == '__main__':
