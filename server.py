@@ -51,9 +51,28 @@ def save():
     return 'save'
 
 
-def log():
-    pass
+@app.route('/system')
+def system():
+    templateData = {'title': 'System'}
+    return render_template("system.html", **templateData)
 
+
+@app.route('/menus')
+def menus():
+    templateData = {'title': 'Menu'}
+    return render_template("menus.html", **templateData)
+
+
+@app.route('/inventory')
+def inventory():
+    templateData = {'title': 'Inventory'}
+    return render_template("inventory.html", **templateData)
+
+
+@app.route('/log')
+def log():
+    templateData = {'title': 'Log', 'logs': read_logs()}
+    return render_template("log.html", **templateData)
 
 if __name__ == '__main__':
     app.run(debug=True)
