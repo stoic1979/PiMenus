@@ -104,13 +104,34 @@ class Parser:
                     links.append(Links(next))
 
         return Meta_Data(total, count, per_page,
+
                  current_page, total_pages, links)
 
 
+def get_parser_data():
+    parser = Parser('test_xml.xml')
+
+    Data = []
+    for data in parser.get_all_data():
+        print '', data.id
+        print '', data.name
+        print '', data.description
+    return [Data for data in parser.get_all_data()]
+
+
+
+def get_all_products():
+    parser = Parser('test_xml.xml')
+
+    return parser.get_all_data()
+
 if __name__ == '__main__':
     parser = Parser('test_xml.xml')
+    """
     get_data = parser.get_all_data()
     for data in get_data:
         data.show_data_details()
     meta = parser.get_meta_data()
     meta.show_meta_details()
+    """
+    # get_id()

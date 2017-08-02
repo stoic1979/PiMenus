@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 import traceback
+from parser import Parser
 from api_manager import ApiManager
 from utils import read_logs, flog
 # from data import get_vapes, get_syringes, get_accessories, get_concentrates, \
@@ -7,6 +8,7 @@ from utils import read_logs, flog
 
 
 app = Flask(__name__)
+parser = Parser('test_xml.xml')
 
 
 @app.route("/menu")
@@ -65,7 +67,15 @@ def menus():
 
 @app.route('/inventory')
 def inventory():
-    templateData = {'title': 'Inventory'}
+    data = parser.get_all_data()
+    for d in data:
+        print '', d.id
+        print '', d.name
+        # print '', d.category
+        for cat in d.category:
+            print '', cat.id
+            print '', cat.name
+    templateData = {'title': 'Inventory', "all_data": data}
     return render_template("inventory.html", **templateData)
 
 

@@ -45,6 +45,29 @@ p {
     <th>cbd_level</th>
     <th>cbn_level</th>
   </tr>
+
+
+      {% for data in all_data %}
+
+       <tr>
+    <td> {{ data.id }} </td>
+    <td> {{ data.name }} </td>
+    <td></td>
+    <td></td>
+           {% for cat in data.category%}
+           <td>{{ cat.name }}</td>
+        {% endfor %}
+           <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+
+
+
+      {% endfor %}
+
+      <!--
   <tr>
     <td>132561</td>
     <td>Maxie Battery</td>
@@ -408,7 +431,7 @@ p {
   </tr>
 
   </tr>
-
+-->
 </table>
 	</body>
 <html>
