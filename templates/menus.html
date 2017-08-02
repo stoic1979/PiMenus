@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style>
+body {
+    background-color: none;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+p {
+    font-family: verdana;
+    font-size: 20px;
+}
+</style>
+</head>
+<body>
+<br>
+	  <center>  <a href="/system" class="btn btn-primary">System</a>
+        <a href="/menus" class="btn btn-primary">Menu</a>
+        <a href="/inventory" class="btn btn-primary">Inventory</a>
+        <a href="/log" class="btn btn-primary">Log</a>
+
+
+        <br><br><br>
+  <form action = '/save' method = 'post'>
+    <table>
+	  <tr>
+	  	  <td >THEME</td>
+		  <td style="padding-right: 25px"><select name="theme">
+            <option value="Green">Green Rush</option>
+            <option value="Esssence">Esssence</option>
+            </select><br><br></td>
+	  </tr>
+
+	  <tr>
+		  <td>GOOGLE FONT</td>
+		  <td style="padding-right: 25px"><select name="gfont">
+            <option value="Green">ARIAL</option>
+            <option value="Esssence">ARIAL NARROW</option>
+            </select><br><br></td>
+	  </tr>
+
+	  <tr>
+		  <td>FONT SIZE</td>
+		  <td><input type="text" name="fsize" size="10" value=""><br><br></td>
+	  </tr>
+
+	  <tr>
+	  	  <td>FONT COLOR</td>
+		  <td><input type="text" name="fcolor" size="10" value=""><br><br></td>
+	  </tr>
+
+	  <tr>
+		  <td>SCROLL RATE </td>
+		  <td><input type="text" name="scrollrate" size="10" value=""><br><br></td>
+	  </tr>
+
+      <tr>
+          <td>UPDATE MENU</td>
+		  <td><select name="upmenu">
+            <option value="Green" size="8">1MIN</option>
+            </select><br><br></td>
+	  </tr>
+    </table>
+    <br>
+    <p>CATEGORIES TO DISPLAY</p>
+    <input type="submit" value="save">
+  </form>
+</CENTER>
+	</body>
+<html>
