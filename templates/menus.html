@@ -22,60 +22,89 @@ p {
     font-family: verdana;
     font-size: 20px;
 }
+
+<style>
+DIV.table
+{
+    display:table;
+}
+FORM.tr, DIV.tr
+{
+    display:table-row;
+}
+SPAN.td
+{
+    display:table-cell;
+}
+</style>
 </style>
 </head>
 <body>
+
+
 <br>
 	  <center>  <a href="/system" class="btn btn-primary">System</a>
         <a href="/menus" class="btn btn-primary">Menu</a>
         <a href="/inventory" class="btn btn-primary">Inventory</a>
         <a href="/log" class="btn btn-primary">Log</a>
-
-
         <br><br><br>
-  <form action = '/save' method = 'post'>
-    <table>
-	  <tr>
-	  	  <td >THEME</td>
-		  <td style="padding-right: 25px"><select name="theme">
-            <option value="Green">Green Rush</option>
-            <option value="Esssence">Esssence</option>
-            </select><br><br></td>
-	  </tr>
 
-	  <tr>
-		  <td>GOOGLE FONT</td>
-		  <td style="padding-right: 25px"><select name="gfont">
-            <option value="Green">ARIAL</option>
-            <option value="Esssence">ARIAL NARROW</option>
-            </select><br><br></td>
-	  </tr>
 
-	  <tr>
-		  <td>FONT SIZE</td>
-		  <td><input type="text" name="fsize" size="10" value=""><br><br></td>
-	  </tr>
 
-	  <tr>
-	  	  <td>FONT COLOR</td>
-		  <td><input type="text" name="fcolor" size="10" value=""><br><br></td>
-	  </tr>
+        <div class="table">
+        <form action = '/save' method = 'post'>
 
-	  <tr>
-		  <td>SCROLL RATE </td>
-		  <td><input type="text" name="scrollrate" size="10" value=""><br><br></td>
-	  </tr>
+        <span class="td">THEME  <select name="theme">
+        {% for data in themes %}
+        <option value="{{ data }}"
+        {% if data == cur_themes %}
+               selected
+        {% endif %}
+        >{{ data }}</option>
+        {% endfor %}
+        </select>
+        </span>
+        <br><br>
 
-      <tr>
-          <td>UPDATE MENU</td>
-		  <td><select name="upmenu">
-            <option value="Green" size="8">1MIN</option>
-            </select><br><br></td>
-	  </tr>
+        <span class="td">
+            GOOGLE FONT
+            <select name="gfont">
+                {% for google_font in google_fonts %}
+                <option value="{{ google_font }}"
+                {% if google_font == cur_google_fonts %}
+                    selected
+                {% endif %}
+            >{{ google_font }}</option>
+                {% endfor %}
+            </select>
+        </span>
+            <br><br>
+
+        <span class="td">FONT SIZE  <input type="text" name="fsize" size="10" value="{{ font_size }}" required=""></span><br><br>
+
+        <span class="td">FONT COLOR <input type="text" name="fcolor" size="10" value="{{ font_color }}" required=""></span><br><br>
+
+	    <span class="td">SCROLL RATE <input type="text" name="scrollrate" size="10" value="{{ scroll_rate }}" required=""></span><br><br>
+
+	    <span class="td">UPDATE MENU <select name="upmenu">
+	    {% for data in update_menu %}
+            <option value="{{ data }}"
+
+            {% if data == cur_update_menu %}
+               selected
+            {% endif %}
+
+            >{{ data }}</option>
+            {% endfor %}
+            </select>
+            </span>
+            <br><br>
+
+
     </table>
     <br>
     <p>CATEGORIES TO DISPLAY</p>
-    <input type="submit" value="save">
+    <input type="submit" value="Save">
   </form>
 </CENTER>
 	</body>
