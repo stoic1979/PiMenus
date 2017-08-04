@@ -38,6 +38,7 @@ def system_update():
 
     except Exception as exp:
         print('system_update() :: Got exp: %s' % exp)
+        flog('system update failed')
     return 'api key: % s' % key
 
 
