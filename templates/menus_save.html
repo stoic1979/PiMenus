@@ -7,8 +7,16 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}"/>
 <style>
+#login
+{
+margin-top:10%;
+margin-right:20%;
+margin-left:20%;
+box-shadow:0 0 18px #ccc;
+}
+
 body {
     background-color: none;
 }
@@ -20,27 +28,35 @@ h1 {
 
 p {
     font-family: verdana;
-    font-size: 17px;
+    font-size: 20px;
+}
+
+<style>
+DIV.table
+{
+    display:table;
+}
+FORM.tr, DIV.tr
+{
+    display:table-row;
+}
+SPAN.td
+{
+    display:table-cell;
 }
 </style>
 </head>
 <body>
-<br>
+<body>
+    <br>
 	  <center>  <a href="/system" class="btn btn-primary">System</a>
         <a href="/menus" class="btn btn-primary">Menu</a>
         <a href="/inventory" class="btn btn-primary">Inventory</a>
-        <a href="/log" class="btn btn-primary">Log</a></center>
-<br><br>
+        <a href="/log" class="btn btn-primary">Log</a>
+        <br><br><br>
 
-<CENTER>
-      <p>UPTIME 365:11:15:30</p>
-       <p>LAST SERVER CONTACT 365:11:15:30</p><br>
-        <form action ='/system_update', method = 'post'>
-        <P>API KEY  <input type="text" name="key" size="36" required=""></P> <BR>
-        <input type="submit" value="PI SYSTEM UPDATE">
-        </form>
-       </CENTER>
-	</body>
-
+<div id="login" class="span3 well-large offset4">
+    <p style="color: green;"><br><br> Menus is saved successfully...<br></p><br><br>
+</div>
 </body>
 </html>

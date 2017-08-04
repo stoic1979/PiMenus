@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<root><message>Wrong number of segments</message><status_code>401</status_code></root>
+<root><message>Not Found</message><status_code>404</status_code></root>
