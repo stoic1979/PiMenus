@@ -4,6 +4,7 @@ from parser import Parser
 from api_manager import ApiManager
 from utils import read_logs, flog
 from config import Config
+import os
 # from data import get_vapes, get_syringes, get_accessories, get_concentrates, \
 #    get_other, get_cat, get_satvia_first, get_satvia_second
 
@@ -107,4 +108,5 @@ def log():
     return render_template("log.html", **templateData)
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000, threaded=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=True, threaded=True)
