@@ -10,7 +10,6 @@ from data import get_vapes, get_syringes, get_accessories, get_concentrates, \
 
 app = Flask(__name__)
 parser = Parser('test_xml.xml')
-config = Config()
 
 
 @app.route('/system_update', methods=['POST'])
@@ -42,8 +41,8 @@ def system():
 
 @app.route('/menus')
 def menus():
-
-    themes = ['Green Lush', 'Essence']
+    config = Config()
+    themes = ['Prerolls', 'Premium', 'Extracts']
     google_fonts = ['Arial', 'Arial Narrow']
     update_menu = ['1 mins', '2 mins', '5 mins', '10 mins']
     cur_themes = config.get_theme()
@@ -65,6 +64,7 @@ def menus():
 
 @app.route('/save', methods=['POST'])
 def save():
+    config = Config()
     try:
         theme = request.form['theme']
         gfont = request.form['gfont']
@@ -79,6 +79,34 @@ def save():
         return "Got exception in saving menu: %s" % exp
     templateData = {'title': 'Menu Save'}
     return render_template("menus_save.html", **templateData)
+
+
+@app.route('/')
+def home():
+    config = Config()
+    try:
+        if config.get_theme() == 'Prerolls':
+            templateData = {'title': 'Home Page', 'first': get_satvia_first(),
+                            'second': get_satvia_second()}
+            return render_template("prerolls.html", **templateData)
+
+        if config.get_theme() == 'Premium':
+            templateData = {'title': 'Premium'}
+            return render_template("premium.html", **templateData)
+
+        if config.get_theme() == 'Extracts':
+            vapes = []
+
+            templateData = {'title': 'Home Page', 'vapes': get_vapes(),
+                            'syringes': get_syringes(),
+                            'accessories': get_accessories(),
+                            'concentrates': get_concentrates(),
+                            'other': get_other(),
+                            'cat': get_cat()}
+            return render_template("extracts.html", **templateData)
+    except Exception as exp:
+        print('home() :: Got exception: %s ' % exp)
+        print(traceback.format_exc())
 
 
 @app.route('/inventory')

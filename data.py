@@ -1,5 +1,6 @@
 from products_parser import *
 
+
 class Item:
     def __init__(self, name, price):
         self.name = name

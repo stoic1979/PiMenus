@@ -64,9 +64,9 @@ class Parser:
                     square_small = data_tag.find('square_small').text
                     square_large = data_tag.find('square_large').text
                     images.append(Image(id, name, thumb, aspectRatio,
-                                    listing_medium, listing_small,
-                                    listing_large, square_medium,
-                                    square_small, square_large))
+                                        listing_medium, listing_small,
+                                        listing_large, square_medium,
+                                        square_small, square_large))
 
             # getting <logo> from data
             if child.tag == 'logo':
@@ -84,10 +84,10 @@ class Parser:
                     logo.append(Logo(id, name, thumb, aspectRatio,
                                      listing_medium, listing_small,
                                      listing_large, square_medium,
-                                         square_small, square_large))
+                                     square_small, square_large))
 
         return Data(id_data, name_data, description, category, units, images,
-                     updated_at, created_at, logo)
+                    updated_at, created_at, logo)
 
     def get_meta_data(self):
         for data in self.meta:
@@ -104,8 +104,7 @@ class Parser:
                     links.append(Links(next))
 
         return Meta_Data(total, count, per_page,
-
-                 current_page, total_pages, links)
+                         current_page, total_pages, links)
 
 
 def get_parser_data():
@@ -117,7 +116,6 @@ def get_parser_data():
         print '', data.name
         print '', data.description
     return [Data for data in parser.get_all_data()]
-
 
 
 def get_all_products():

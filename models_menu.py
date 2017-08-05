@@ -1,4 +1,3 @@
-from utils import flog
 class Meta_Data:
     def __init__(self, total, count, per_page,
                  current_page, total_pages, links):
@@ -42,7 +41,6 @@ class Data:
         self.name = name
         self.description = description
         self.category = category
-        #print "[DATA] categoty: ", category
         self.units = units
         self.images = images
         self.updated_at = updated_at
@@ -56,7 +54,6 @@ class Data:
     def __str__(self):
         return "Product: %s, category: %s" % \
                (str(self.name), str(self.category))
-
 
     def show_data_details(self):
         print "\n================[ Data ]====================="
@@ -106,7 +103,7 @@ class Unit:
 
     def __str__(self):
         return "Units: %s, %s, %s, %s" % (str(self.id), str(self.name),
-                                       str(self.key), str(self.value))
+                                          str(self.key), str(self.value))
 
     def show_units_details(self):
         print "\n================[ Unit ]====================="

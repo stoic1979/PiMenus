@@ -1,7 +1,8 @@
 #
-# Script for utility/helper functions        
+# Script for utility/helper functions
 #
 import datetime
+
 
 def flog(msg):
     """
@@ -23,6 +24,7 @@ def read_logs():
     except:
         return []
 
+
 def datetim():
     now = datetime.datetime.now()
     print str(now)
@@ -31,4 +33,4 @@ def datetim():
 if __name__ == '__main__':
     flog('hiiii')
     read_logs()
-    #datetim()
+    # datetim()

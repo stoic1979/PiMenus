@@ -98,8 +98,9 @@ class ProductParser:
 def get_products_by_category(category, subcategory):
     pp = ProductParser('products.xml')
 
-    return [product for product in pp.get_products() if product.category == category and product.subcategory == subcategory]
-
+    return [product for product in pp.get_products()
+            if product.category == category and
+            product.subcategory == subcategory]
 
 
 def get_all_products():
@@ -140,7 +141,6 @@ if __name__ == "__main__":
     print get_products_by_category('PreRolls', 'Satvia')
     print get_products_by_category('PreRolls', 'Hybrid')
     print get_products_by_category('PreRolls', 'Indica')
-
 
     """
     pp = ProductParser('products.xml')

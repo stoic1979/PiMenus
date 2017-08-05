@@ -10,7 +10,6 @@ class Pagination:
         self.total = total
         self.count = count
 
-
     def show_pagination_details(self):
         print "\n================[ Product ]====================="
         print "current_page . . . . . . . . . : ", self.current_page
@@ -90,6 +89,7 @@ class Product:
 
     def get_price(self):
         return self.prices[0]
+
 
 class UrlInfo:
     def __init__(self, admin, public):
