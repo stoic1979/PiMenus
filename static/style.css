@@ -2,7 +2,7 @@
 @font-face {
 	font-family: 'GothamMedium';
 	src: url('../fonts/GothamMedium.eot');
-	src: local('â˜º'),
+	src: local('☺'),
 		url('../fonts/GothamMedium.woff') format('woff'),
 		url('../fonts/GothamMedium.ttf') format('truetype'),
 		url('../fonts/GothamMedium.svg') format('svg');
@@ -13,7 +13,7 @@ html {box-sizing: border-box;}
 *, *:before, *:after {box-sizing: inherit;}
 
 body{margin: 0;font-family: 'GothamMedium';display: inline-block;width: 100%;vertical-align: top; position: relative; z-index: 1;}
-body:after{position: absolute; content: ""; left: 0; right: 0;top: 0; bottom: 0; display: block; background: url(../images/bg.png); z-index: -1;}
+body:after{position: absolute; content: ""; left: 0; right: 0;top: 0; bottom: 0; display: block; background: url(./images/bg.png); z-index: -1;}
 .left{float: left;text-align: left;}
 .right{float: right;text-align: right;}
 .min-height, .min-height-huff{display: inline-block;width: 100%; height: 40px; float: left;}
@@ -31,7 +31,7 @@ body:after{position: absolute; content: ""; left: 0; right: 0;top: 0; bottom: 0;
 .title span:before {right: 100%;margin-right: 15px;}
 .title span:after {left: 100%;margin-left: 15px;}
 
-.left-part{display: inline-block;float: left;width: 20.99%;padding:30PX 15PX 40px;  background-color: rgba(245,245,245); background-image: url(../images/bg.png);}
+.left-part{display: inline-block;float: left;width: 20.99%;padding:30PX 15PX 40px;  background-color: rgba(245,245,245); background-image: url(./images/bg.png);}
 .prige{display: inline-block;width: 100%;float: left;text-align: center; padding: 0 45PX;}
 .prige p{margin: 0 20px 14px 0; display: inline-block; font-size: 22px; color: #1f1f1f; vertical-align: bottom;}
 .prige p span{font-size: 14px; color: #1f1f1f; display: inline-block; vertical-align: bottom;}
@@ -55,14 +55,14 @@ body:after{position: absolute; content: ""; left: 0; right: 0;top: 0; bottom: 0;
 .title-top p span{vertical-align: bottom; display: inline-block; font-size: 16px; margin:0 5px 0 0;  }
 
 .sativa-blog{display: inline-block;width: 33.33%; float: left;border-right: 1px solid #f2ece1 !important;border-top: 10px solid #777; border-bottom: 10px solid #777; min-height: 457px;}
-.hedding{display: inline-block;width: 100%; text-align: center;vertical-align: middle; margin: 0; background-color:#000;background-image: url(../images/bg.png);color: #fff; font-size: 24px; font-weight: 100; padding: 20px 0 20px;  }
+.hedding{display: inline-block;width: 100%; text-align: center;vertical-align: middle; margin: 0; background-color:#000;background-image: url(./images/bg.png);color: #fff; font-size: 24px; font-weight: 100; padding: 20px 0 20px;  }
 .oreng h3{background-color: rgba(198,81,52,0.9);  }
 .oreng{border-color: #c65134; }
 .green{border-color: #86b940;}
 .green h3{background-color: rgba(134,185,64,0.9);}
 .violet{border-color: #67375c;}
 .violet h3{background-color: rgba(103,55,92,0.9);}
-.sativa-blog .value-bottom{/*background-color: #fff;background-image: url(../images/hedding-bg.png);*/ padding: 0 8px;}
+.sativa-blog .value-bottom{/*background-color: #fff;background-image: url(./images/hedding-bg.png);*/ padding: 0 8px;}
 
 .sativa-blog.violet .value-bottom p{line-height: 26px;}
 .sativa-blog.center-blog .value-bottom p{line-height: 27px;}
@@ -77,40 +77,27 @@ body:after{position: absolute; content: ""; left: 0; right: 0;top: 0; bottom: 0;
 .extracts-detail{margin:0 ; display: inline-block; width: 100%; float: left; }
 .extracts-detail .extracts-boxis{display: inline-block;width: 33.33%; padding: 0 30px; float: left;}
 .extracts-detail .left-extracts p {line-height: 31px;}
-.border-bottom{background-color: #c7d451; height: 23px; display: inline-block; width: 100%; float: left; margin-top: 20px; /*background-image: url(../images/hedding-bg.png);*/}
+.border-bottom{background-color: #c7d451; height: 23px; display: inline-block; width: 100%; float: left; margin-top: 20px; /*background-image: url(./images/hedding-bg.png);*/}
 .prerolls-detail .sativa-blog.violet .value-bottom p{line-height: 30px;}
 .prerolls-detail .sativa-blog{border-right: 0px solid transparent !important; padding-bottom: 20px;}
 .prerolls-detail .sativa-blog .value-bottom{padding: 0 30px;}
 .prerolls-detail .value-bottom p.left span.right{font-size: 20px;}
 .prerolls-detail .hedding{font-size: 40px; font-weight: 100; letter-spacing:5px;}
+.right-part.left-part .value-bottom p{line-height: 20px;}
+.right-part.left-part .value-bottom p span{top: 0; position: inherit; margin:0 0 10px;}
 
 
 
 @media screen and (max-width: 1760px){
 	.prige{ padding: 0 20px; }
+	.title-top p{font-size: 20px; margin: 8px 0 0 5px;}
 }
 
 @media screen and (max-width: 1530px){
 	.prige p{margin: 0 10px 14px 0;}
+	.title-top p{font-size: 18px;}
+	.title-top p span{font-size: 14px;}
 }
-
-	.nav-tabs > li, .nav-pills > li {
-    float:none;
-    display:inline-block;
-    *display:inline;
-    zoom:1;
-}
-.nav>li>a:hover,
-
-.nav>li>a:focus{
-
- background-color: white;}
-.nav-tabs, .nav-pills {
-    text-align:center;
-    }
-td:nth-child(1) {
-    padding-right: 20px;
-}​
 
 
 

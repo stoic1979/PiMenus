@@ -157,7 +157,7 @@ def extracts():
 @app.route("/premium")
 def premium():
     templateData = {'title': 'Home Page'}
-    return render_template("premium.html", **templateData)
+    return render_template("flower.html", **templateData)
 
 
 if __name__ == '__main__':

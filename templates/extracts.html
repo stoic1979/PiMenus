@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Extracts</title>
-
-    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+   <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
   </head>
+
   <body>
     
     
@@ -18,49 +18,33 @@
       <div class="extracts-detail">
         <div class="extracts-boxis left-extracts">
           <h2 class="title"><span>vapes</span></h2>
-
-
-          <!--      VAPES -->
-          {% for vape in vapes %}
-              <p>{{ vape.name }}<span>{{ vape.get_price() }}</span></p>
-          {%  endfor %}
-
+          <p>BAM Rosin Rockets: Blue Gorilla<span>$14</span></p>
+          <p>BAM Rosin Rockets: Forum Sin Mint Cookies<span>$14</span></p>
+          <p>BAM Rosin Rockets: Key Lime Gorilla<span>$14</span></p>
+          <p>BAM Rosin Rockets: Blue Gorilla<span>$14</span></p>
+          <p>BAM Rosin Rockets: Forum Sin Mint Cookies<span>$14</span></p>
+          <p>BAM Rosin Rockets: Key Lime Gorilla<span>$14</span></p>
+          <p>BAM Rosin Rockets: Blue Gorilla<span>$14</span></p>
+          <p>BAM Rosin Rockets: Forum Sin Mint Cookies<span>$14</span></p>
+          <p>BAM Rosin Rockets: Key Lime Gorilla<span>$14</span></p>
+          <p>BAM Rosin Rockets: Blue Gorilla<span>$14</span></p>
+          <p>BAM Rosin Rockets: Forum Sin Mint Cookies<span>$14</span></p>
+          <p>BAM Rosin Rockets: Key Lime Gorilla<span>$14</span></p>
           <h2 class="title"><span>syringes</span></h2>
-
-          {% for syringe in syringes %}
-              <p>{{ syringe.name }}<span>{{ syringe.price }}</span></p>
-          {%  endfor %}
-
-
-          <!--
           <p>BAM Rosin Rockets: Blue Gorilla<span>$14</span></p>
           <p>BAM Rosin Rockets: Forum Sin Mint Cookies<span>$14</span></p>
           <p>BAM Rosin Rockets: Key Lime Gorilla<span>$14</span></p>
           <p>BAM Rosin Rockets: Blue Gorilla<span>$14</span></p>
           <p>BAM Rosin Rockets: Forum Sin Mint Cookies<span>$14</span></p>
-
-          -->
           <h2 class="title"><span>accessories</span></h2>
-
-          {% for accessorie in accessories %}
-              <p>{{ accessorie.name }}<span>{{ accessorie.price }}</span></p>
-          {%  endfor %}
-          <!--
           <p>BAM Rosin Rockets: Blue Gorilla<span>$14</span></p>
           <p>BAM Rosin Rockets: Forum Sin Mint Cookies<span>$14</span></p>
           <p>BAM Rosin Rockets: Key Lime Gorilla<span>$14</span></p>
           <p>BAM Rosin Rockets: Blue Gorilla<span>$14</span></p>
-          -->
         </div>
 
-
-
-          <div class="extracts-boxis center-extracts">
+        <div class="extracts-boxis center-extracts">
           <h2 class="title"><span>concentrates</span></h2>
-          {% for concentrate in concentrates %}
-              <p>{{ concentrate.name }}<span>{{ concentrate.price }}</span></p>
-          {%  endfor %}
-            <!--
           <p>BAM Rosin Rockets: Blue Gorilla<span>$14</span></p>
           <p>BAM Rosin Rockets: Forum Sin Mint Cookies<span>$14</span></p>
           <p>BAM Rosin Rockets: Key Lime Gorilla<span>$14</span></p>
@@ -85,15 +69,10 @@
           <p>BAM Rosin Rockets: Blue Gorilla<span>$14</span></p>
           <p>BAM Rosin Rockets: Forum Sin Mint Cookies<span>$14</span></p>
           <p>BAM Rosin Rockets: Key Lime Gorilla<span>$14</span></p>
-          -->
         </div>
 
         <div class="extracts-boxis right-extracts">
           <h2 class="title"><span>other</span></h2>
-          {% for others in other %}
-              <p>{{ others.name }}<span>{{ others.price }}</span></p>
-          {%  endfor %}
-          <!--
           <p>BAM Rosin Rockets: Blue Gorilla<span>$14</span></p>
           <p>BAM Rosin Rockets: Forum Sin Mint Cookies<span>$14</span></p>
           <p>BAM Rosin Rockets: Key Lime Gorilla<span>$14</span></p>
@@ -109,13 +88,7 @@
           <p>BAM Rosin Rockets: Blue Gorilla<span>$14</span></p>
           <p>BAM Rosin Rockets: Forum Sin Mint Cookies<span>$14</span></p>
           <p>BAM Rosin Rockets: Key Lime Gorilla<span>$14</span></p>
-
-          -->
           <h2 class="title"><span>cat 4</span></h2>
-          {% for cats in cat %}
-              <p>{{ cats.name }}<span>{{ cats.price }}</span></p>
-          {%  endfor %}
-          <!--
           <p>BAM Rosin Rockets: Blue Gorilla<span>$14</span></p>
           <p>BAM Rosin Rockets: Forum Sin Mint Cookies<span>$14</span></p>
           <p>BAM Rosin Rockets: Key Lime Gorilla<span>$14</span></p>
@@ -124,7 +97,6 @@
           <p>BAM Rosin Rockets: Key Lime Gorilla<span>$14</span></p>
           <p>BAM Rosin Rockets: Blue Gorilla<span>$14</span></p>
           <p>BAM Rosin Rockets: Forum Sin Mint Cookies<span>$14</span></p>
-        -->
         </div>
 
       </div>
