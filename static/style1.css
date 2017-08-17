@@ -20,25 +20,18 @@ body:after{position: absolute; content: ""; left: 0; right: 0;top: 0; bottom: 0;
 .min-height-huff{height: 25px;}
 
 
-.span-left, .span-center, .span-center { display: inline-block; }
 
-.span-left {width: 35%;text-align: left;  font-size: 80%; margin-left:10px;}
-
-.span-center {width: 25%;text-align: center;font-size: 110%;}
-
-.span-right {width: 25%;text-align: right;font-size: 80%; }
 
 
 .flower-page{display: inline-block;width: 100%; float: left;background-size: cover;}
 
-.title {line-height: 25px;text-align: center;font-size: 25px;font-weight: 900;margin:10px 0;display: inline-block;width: 100%;overflow: hidden;text-transform: uppercase;}
+.title {line-height: 30px;text-align: center;font-size: 32px;font-weight: 900;margin:10px 0;display: inline-block;width: 100%;overflow: hidden;text-transform: uppercase;}
 .title span {display: inline-block;position: relative;  }
-.title span:before,.title span:after {content: "";position: absolute;height: 8px;top: 50%;margin-top: -7px;background: #000; width: 600px;}
+.title span:before,.title span:after {content: "";position: absolute;height: 15px;top: 50%;margin-top: -7px;background: #000; width: 600px;}
 .title span:before {right: 100%;margin-right: 15px;}
 .title span:after {left: 100%;margin-left: 15px;}
 
-
-.left-part{display: inline-block;float: left;width: 20.99%;padding:3PX 15PX 40px;  background-color: rgba(245,245,245); background-image: url(./images/bg.png);}
+.left-part{display: inline-block;float: left;width: 20.99%;padding:30PX 15PX 40px;  background-color: rgba(245,245,245); background-image: url(./images/bg.png);}
 .prige{display: inline-block;width: 100%;float: left;text-align: center; padding: 0 45PX;}
 .prige p{margin: 0 20px 14px 0; display: inline-block; font-size: 22px; color: #1f1f1f; vertical-align: bottom;}
 .prige p span{font-size: 14px; color: #1f1f1f; display: inline-block; vertical-align: bottom;}
@@ -47,7 +40,6 @@ body:after{position: absolute; content: ""; left: 0; right: 0;top: 0; bottom: 0;
 .value-bottom p span{text-transform: uppercase; font-size: 12px; line-height: 15px; position: absolute;}
 .value-bottom p span.left{left: 0;}
 .value-bottom p span.right{right: 0;}
-
 .others-detail{display: inline-block;width: 100%; float: left;}
 .others-detail p span{text-align: right; float: right;}
 .others-detail p{text-align: left;display: inline-block;width: 100%; margin: 0; line-height: 22px; color: #000;}
@@ -62,7 +54,7 @@ body:after{position: absolute; content: ""; left: 0; right: 0;top: 0; bottom: 0;
 .title-top p{display: inline-block; color: #fff; font-size: 24px;vertical-align: top; margin: 8px 0 0 15px; font-weight: 400; }
 .title-top p span{vertical-align: bottom; display: inline-block; font-size: 16px; margin:0 5px 0 0;  }
 
-.sativa-blog{display: inline-block;width: 33.33%; float: left;border-right: 0px solid #f2ece1 !important;border-top: 10px solid #777; border-bottom: 10px solid #777; min-height: 395px;}
+.sativa-blog{display: inline-block;width: 33.33%; float: left;border-right: 1px solid #f2ece1 !important;border-top: 10px solid #777; border-bottom: 10px solid #777; min-height: 300px;}
 .hedding{display: inline-block;width: 100%; text-align: center;vertical-align: middle; margin: 0; background-color:#000;background-image: url(./images/bg.png);color: #fff; font-size: 24px; font-weight: 100; padding: 20px 0 20px;  }
 .oreng h3{background-color: rgba(198,81,52,0.9);  }
 .oreng{border-color: #c65134; }
@@ -70,24 +62,23 @@ body:after{position: absolute; content: ""; left: 0; right: 0;top: 0; bottom: 0;
 .green h3{background-color: rgba(134,185,64,0.9);}
 .violet{border-color: #67375c;}
 .violet h3{background-color: rgba(103,55,92,0.9);}
-
-.sativa-blog.oreng .value-bottom p{line-height: 24px;}
-.sativa-blog.green .value-bottom p{line-height: 28px;}
-.sativa-blog.violet .value-bottom p{line-height: 22px;}
+.sativa-blog.oreng .value-bottom p{line-height: 27px;}
+.sativa-blog.green .value-bottom p{line-height: 27px;}
+.sativa-blog.violet .value-bottom p{line-height: 20px;}
 .sativa-blog.center-blog .value-bottom p{line-height: 18px;}
 .sativa-blog.right-blog .value-bottom p{line-height: 18px;}
 
-.bottom-section{min-height: 395px;}
+.bottom-section{min-height: 300px;}
 
 .page-title{display: inline-block;width: 100%; float: left; text-align: center; background-color: #1d1d1d; padding:50px 0; }
 .page-title h2{color: #c7d451; margin: 0; display: inline-block;width: 100%; text-align: center; font-weight: 900; font-size: 60px; text-transform: uppercase; line-height: normal;}
-.extracts-detail p{display: inline-block;width: 100%; float: left; text-align: left; margin:0; line-height: 20px; font-size: 25px; color: #000; }
+.extracts-detail p{display: inline-block;width: 100%; float: left; text-align: left; margin:0; line-height: 28px; font-size: 18px; color: #000; }
 .extracts-detail p span{float: right; text-align: right;}
 .extracts-detail{margin:0 ; display: inline-block; width: 100%; float: left; }
 .extracts-detail .extracts-boxis{display: inline-block;width: 33.33%; padding: 0 30px; float: left;}
-.extracts-detail .left-extracts p {line-height: 22px;}
+.extracts-detail .left-extracts p {line-height: 31px;}
 .border-bottom{background-color: #c7d451; height: 13px; display: inline-block; width: 100%; float: left; margin-top: 20px; /*background-image: url(./images/hedding-bg.png);*/}
-.prerolls-detail .sativa-blog.violet .value-bottom p{line-height: 28px;}
+.prerolls-detail .sativa-blog.violet .value-bottom p{line-height: 27px;}
 .prerolls-detail .sativa-blog{border-right: 0px solid transparent !important; padding-bottom: 30px;}
 .prerolls-detail .sativa-blog .value-bottom{padding: 0 30px;}
 .prerolls-detail .value-bottom p.left span.right{font-size: 15px;}
@@ -107,7 +98,6 @@ body:after{position: absolute; content: ""; left: 0; right: 0;top: 0; bottom: 0;
 	.title-top p{font-size: 18px;}
 	.title-top p span{font-size: 14px;}
 }
-
 
 
 

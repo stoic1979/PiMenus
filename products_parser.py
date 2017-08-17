@@ -138,9 +138,9 @@ def get_other_data():
 
 if __name__ == "__main__":
 
-    print get_products_by_category('PreRolls', 'Satvia')
-    print get_products_by_category('PreRolls', 'Hybrid')
-    print get_products_by_category('PreRolls', 'Indica')
+    print get_products_by_category('Prerolls', 'satvia')
+    print get_products_by_category('Prerolls', 'hybrid')
+    print get_products_by_category('Prerolls', 'indica')
 
     """
     pp = ProductParser('products.xml')
