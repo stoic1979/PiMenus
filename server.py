@@ -6,7 +6,8 @@ from utils import read_logs, flog
 from config import Config
 import os
 from data import get_vapes, get_syringes, get_accessories, get_concentrates, \
-    get_other, get_cat, get_satvia_first, get_satvia_second
+    get_other, get_cat, get_satvia_first, get_satvia_second, get_sativa_flower, \
+    get_sativa
 
 app = Flask(__name__)
 parser = Parser('test_xml.xml')
@@ -91,8 +92,8 @@ def home():
             return render_template("prerolls.html", **templateData)
 
         if config.get_theme() == 'Premium':
-            templateData = {'title': 'Premium'}
-            return render_template("premium.html", **templateData)
+            templateData = {'title': 'Home Page', 'sativa': get_sativa()}
+            return render_template("flower.html", **templateData)
 
         if config.get_theme() == 'Extracts':
             vapes = []
@@ -115,7 +116,7 @@ def inventory():
     for d in data:
         print '', d.id
         print '', d.name
-        # print '', d.category
+        # print '', d.category.xml
         for cat in d.category:
             print '', cat.id
             print '', cat.name
@@ -144,8 +145,11 @@ def prerolls():
 def extracts():
 
     vapes = []
+    for s in get_vapes():
+        print "", s
 
-    templateData = {'title': 'Home Page', 'vapes': get_vapes(),
+    templateData = {'title': 'Home Page',
+                    'vapes': get_vapes(),
                     'syringes': get_syringes(),
                     'accessories': get_accessories(),
                     'concentrates': get_concentrates(),
@@ -154,9 +158,18 @@ def extracts():
     return render_template("extracts.html", **templateData)
 
 
+##################################
+#           orignal              #
+##################################
 @app.route("/premium")
 def premium():
-    templateData = {'title': 'Home Page'}
+    # print "++++++++++++++++++++++++++++++++++++++++"
+
+    print "", get_sativa()
+    print "++++++++++++++++++++++++++++++++++++++++", get_sativa()
+
+    # templateData = {'title': 'Home Page', 'sativa': get_sativa_flower()}
+    templateData = {'title': 'Home Page', 'sativa': get_sativa()}
     return render_template("flower.html", **templateData)
 
 

@@ -34,12 +34,51 @@ class Links:
         print "==============================================\n"
 
 
+class Meta_Data_cat:
+    def __init__(self, total, count, per_page,
+                 current_page, total_pages, links):
+        self.total = total
+        self.count = count
+        self.per_page = per_page
+        self.current_page = current_page
+        self.total_pages = total_pages
+        self.links = links
+
+    def show_meta_details(self):
+        print "\n================[ Meta Data ]=================="
+        print "total . . . . . .: ", self.total
+        print "count . . . . . .: ", self.count
+        print "per_page . . . . : ", self.per_page
+        print "current_page . . : ", self.current_page
+        print "total_pages. . . : ", self.total_pages
+        print "links . . . . . .: "
+        for link in self.links:
+            print "   ", link
+        print "================================================\n"
+
+
+class Links_cat:
+    def __init__(self, next):
+        self.nxt = next
+
+    def __str__(self):
+        return "Links previous = %s" % str(self.nxt)
+
+    def show_links_details(self):
+        print "\n================[ UrlInfo ]====================="
+        print "previous . . : ", self.nxt
+        print "==============================================\n"
+
+
 class Data:
-    def __init__(self, id, name, description, category, units, images,
+    def __init__(self, id, name, slug, dispensary, description, subcategory, category, units, images,
                  updated_at, created_at, logo):
         self.id = id
         self.name = name
+        self.slug = slug
+        self.dispensary = dispensary
         self.description = description
+        self.subcategory = subcategory
         self.category = category
         self.units = units
         self.images = images
@@ -52,17 +91,23 @@ class Data:
         return self.name
 
     def __str__(self):
-        return "Product: %s, category: %s" % \
+        return "Product: %s, category.xml: %s" % \
                (str(self.name), str(self.category))
 
     def show_data_details(self):
         print "\n================[ Data ]====================="
         print "id . . . . . . . . . : ", self.id
         print "name . . . . . . . . : ", self.name
+        print "slug. . . . . . . . .: ", self.slug
+        print "dispensary . . . . . : "
+        for dispensary in self.dispensary:
+            print " ", dispensary
         print "description . . . . .: ", self.description
-        print "category . . . . . . : "
+        print "subcategory . . . . . . : "
+        for subcategory in self.subcategory:
+            print " ", subcategory
+        print "category. . . . . . . . : "
         for categories in self.category:
-
             print " ", categories
         print "units . . . . . .. . : "
         for unit in self.units:
@@ -76,6 +121,39 @@ class Data:
         for log in self.logo:
             print "   ", log
         print "================================================\n"
+
+
+class Dispensary:
+    def __init__(self, id, name):
+        self.id = id
+        self.name = name
+
+    def __str__(self):
+        return "Category id=%s, name=%s" % (str(self.id),
+                                            str(self.name))
+
+    def show_url_info_details(self):
+        print "\n================[ Dispensary ]====================="
+        print "id . . : ", self.id
+        print "name . : ", self.name
+        print "==============================================\n"
+
+
+class SubCategory:
+    def __init__(self, id, name):
+        self.id = id
+        self.name = name
+
+    def __str__(self):
+        return "Category id=%s, name=%s" % (str(self.id),
+                                            str(self.name))
+
+    def show_url_info_details(self):
+        print "\n================[ SubCategory ]====================="
+        print "id . . : ", self.id
+        print "name . : ", self.name
+        print "==============================================\n"
+
 
 
 class Category:

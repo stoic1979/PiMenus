@@ -23,12 +23,15 @@ class Parser:
         try:
             id_data = data.find('id').text
             name_data = data.find('name').text
+            slug = data.find('slug').text
             description = data.find('description').text
             updated_at = data.find('updated_at').text
             created_at = data.find('created_at').text
         except Exception as exp:
             print('get_data() :: Got expcetion: %s' % exp)
             pass
+        dispensary = []
+        subcategory = []
         category = []
         units = []
         images = []
@@ -36,8 +39,19 @@ class Parser:
 
         for child in data:
 
-            # getting <category> from data
-            if child.tag == 'category':
+            if child.tag == 'dispensary':
+                id = child.find('id').text
+                name = child.find('name').text
+                dispensary.append(Dispensary(id, name))
+
+            # getting <category.xml> from data
+            if child.tag == 'subcategory':
+                id = child.find('id').text
+                name = child.find('name').text
+                subcategory.append(SubCategory(id, name))
+
+            # getting <category.xml> from data
+            if child.tag == 'category.xml':
                 id = child.find('id').text
                 name = child.find('name').text
                 category.append(Category(id, name))
@@ -51,7 +65,9 @@ class Parser:
                     units.append(Unit(id, name, key, value))
 
             # getting <images> from data
+
             if child.tag == 'images':
+
                 for data_tag in child:
                     id = data_tag.find('id').text
                     name = data_tag.find('name').text
@@ -86,7 +102,7 @@ class Parser:
                                      listing_large, square_medium,
                                      square_small, square_large))
 
-        return Data(id_data, name_data, description, category, units, images,
+        return Data(id_data, name_data, slug, dispensary, description, subcategory, category, units, images,
                     updated_at, created_at, logo)
 
     def get_meta_data(self):
@@ -106,30 +122,75 @@ class Parser:
         return Meta_Data(total, count, per_page,
                          current_page, total_pages, links)
 
+    def get_meta_data_all(self):
+        for data in self.meta:
+            total = data.find('total').text
+            count = data.find('count').text
+            per_page = data.find('per_page').text
+            current_page = data.find('current_page').text
+            total_pages = data.find('total_pages').text
+            links = []
+
+            for child in data:
+                if child.tag == 'links':
+                    previous = child.find('previous').text
+                    links.append(Links_cat(previous))
+
+        return Meta_Data_cat(total, count, per_page,
+                         current_page, total_pages, links)
+
+        return Meta_Data(total, count, per_page,
+                         current_page, total_pages)
+
 
 def get_parser_data():
-    parser = Parser('test_xml.xml')
+    parser = Parser('latest.xml')
 
     Data = []
     for data in parser.get_all_data():
         print '', data.id
         print '', data.name
         print '', data.description
-    return [Data for data in parser.get_all_data()]
+    # return [Data for data in parser.get_all_data()]
 
 
 def get_all_products():
-    parser = Parser('test_xml.xml')
+    parser = Parser('latest.xml')
 
     return parser.get_all_data()
 
+
+def get_category():
+    parser = Parser('latest.xml')
+    try:
+        # print '+++++++++++++++++++++++++++++++'
+        # for pro in parser.get_all_data():
+        #     #if product.subcategory == subcategory:
+        #     print "====================", pro
+        return [pro for pro in parser.get_all_data()]
+    except:
+        pass
+
+
+
+
 if __name__ == '__main__':
-    parser = Parser('test_xml.xml')
-    """
+    # parser = Parser('latest.xml')
+    # parser = Parser('category.xml')
+    parser = Parser('dispensary.xml')
+
     get_data = parser.get_all_data()
     for data in get_data:
         data.show_data_details()
     meta = parser.get_meta_data()
     meta.show_meta_details()
-    """
+
+    # only for category and dispensary(both) xml
+    print '(Both) :: category and dispensary xml'
+    parser = Parser('both(cat&dis).xml')
+    meta = parser.get_meta_data_all()
+    meta.show_meta_details()
+
+    # get_category('Flowers', 'Sativa')
+    # get_category()
     # get_id()
