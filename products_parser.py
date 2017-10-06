@@ -138,17 +138,14 @@ def get_other_data():
 
 if __name__ == "__main__":
 
-    print get_products_by_category('Prerolls', 'satvia')
-    print get_products_by_category('Prerolls', 'hybrid')
-    print get_products_by_category('Prerolls', 'indica')
+    #print get_products_by_category('Prerolls', 'satvia')
+    #print get_products_by_category('Prerolls', 'hybrid')
+    #print get_products_by_category('Prerolls', 'indica')
 
-    """
+
     pp = ProductParser('products.xml')
-
     products = pp.get_products()
     for product in products:
         product.show_product_details()
-
     pagination = pp.get_pagination()
     pagination.show_pagination_details()
-    """

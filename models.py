@@ -65,7 +65,7 @@ class Product:
         print "dispensary_valuename . . . . . . : ", self.dispensary_valuename
         print "canabis_brand . . . . . : ", self.canabis_brand
         print "canabis_strain . . .  . .: ", self.canabis_strain
-        print "category . . . . . : ", self.category
+        print "category.xml . . . . . : ", self.category
         print "subcategory . . .  . .: ", self.subcategory
         print "thc_level . . . . . : ", self.thc_level
         print "cbd_level . . .  . .: ", self.cbd_level

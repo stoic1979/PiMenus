@@ -1,5 +1,5 @@
 from products_parser import *
-
+from parser import *
 
 class Item:
     def __init__(self, name, price):
@@ -9,7 +9,6 @@ class Item:
 
 def get_vapes():
     return get_products_by_category('extracts', 'vapes')
-
 
 def get_syringes():
     return get_products_by_category('extracts', 'syringes')
@@ -29,6 +28,18 @@ def get_other():
 
 def get_cat():
     return get_products_by_category('extracts', 'cat 4')
+
+def get_sub():
+    return get_products_by_prerolls('prerolls', 'sub')
+
+# def get_edibles():
+#     return get_parser_by_category('Edibles')
+
+
+def get_sativa():
+    s = get_category()
+    # print "", s
+    return get_category()
 
 
 def get_satvia_first():
@@ -63,3 +74,8 @@ def get_satvia_other():
         Item('BAM Rosin Rockets: Forum Sin Mint Cookies', '$14'),
         Item('BAM Rosin Rockets: Key Lime Gorilla', '$14'),
     ]
+def get_sativa_flower():
+    return get_products_by_category('premium shelf', 'satvia')
+
+if __name__ == '__main__':
+    get_sativa()
