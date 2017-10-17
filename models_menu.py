@@ -71,7 +71,9 @@ class Links_cat:
 
 
 class Data:
-    def __init__(self, id, name, slug, dispensary, description, subcategory, category, units, images,
+
+    def __init__(self, id, name, slug, dispensary, description, subcategory,
+                 category, units, images,
                  updated_at, created_at, logo):
         self.id = id
         self.name = name
@@ -155,7 +157,6 @@ class SubCategory:
         print "==============================================\n"
 
 
-
 class Category:
     def __init__(self, id, name):
         self.id = id
@@ -173,6 +174,7 @@ class Category:
 
 
 class Unit:
+
     def __init__(self, id, name, key, value):
         self.id = id
         self.name = name

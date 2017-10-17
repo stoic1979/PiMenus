@@ -1,6 +1,7 @@
 from products_parser import *
 from parser import *
 
+
 class Item:
     def __init__(self, name, price):
         self.name = name
@@ -9,6 +10,7 @@ class Item:
 
 def get_vapes():
     return get_products_by_category('extracts', 'vapes')
+
 
 def get_syringes():
     return get_products_by_category('extracts', 'syringes')
@@ -29,6 +31,7 @@ def get_other():
 def get_cat():
     return get_products_by_category('extracts', 'cat 4')
 
+
 def get_sub():
     return get_products_by_prerolls('prerolls', 'sub')
 
@@ -41,19 +44,24 @@ def get_sativa():
     # print "", s
     return get_category()
 
+#
+# def get_satvia_first():
+#     return [
+#         Item('BAM Rosin Rockets: Blue Gorilla', '$14'),
+#         Item('BAM Rosin Rockets: Forum Sin Mint Cookies', '$14'),
+#         Item('BAM Rosin Rockets: Key Lime Gorilla', '$14'),
+#         Item('BAM Rosin Rockets: Sin Mint Cookies', '$14'),
+#         Item('BAM Rosin Rockets: White Nightmare', '$14'),
+#         Item('BAM Rosin Rockets: White Strawberry', '$14'),
+#         Item('BAM Rosin Rockets: Bubba Cookies', '$14'),
+#         Item('BAM Rosin Rockets: Body & Mind', '$14'),
+#     ]
 
-def get_satvia_first():
-    return [
-        Item('BAM Rosin Rockets: Blue Gorilla', '$14'),
-        Item('BAM Rosin Rockets: Forum Sin Mint Cookies', '$14'),
-        Item('BAM Rosin Rockets: Key Lime Gorilla', '$14'),
-        Item('BAM Rosin Rockets: Sin Mint Cookies', '$14'),
-        Item('BAM Rosin Rockets: White Nightmare', '$14'),
-        Item('BAM Rosin Rockets: White Strawberry', '$14'),
-        Item('BAM Rosin Rockets: Bubba Cookies', '$14'),
-        Item('BAM Rosin Rockets: Body & Mind', '$14'),
-    ]
 
+def get_sativa():
+    return get_prerolls('Sativa')
+def get_indica():
+    return get_prerolls('Indica')
 
 def get_satvia_second():
     return [
@@ -74,6 +82,8 @@ def get_satvia_other():
         Item('BAM Rosin Rockets: Forum Sin Mint Cookies', '$14'),
         Item('BAM Rosin Rockets: Key Lime Gorilla', '$14'),
     ]
+
+
 def get_sativa_flower():
     return get_products_by_category('premium shelf', 'satvia')
 

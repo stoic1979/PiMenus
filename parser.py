@@ -102,7 +102,8 @@ class Parser:
                                      listing_large, square_medium,
                                      square_small, square_large))
 
-        return Data(id_data, name_data, slug, dispensary, description, subcategory, category, units, images,
+        return Data(id_data, name_data, slug, dispensary, description,
+                    subcategory, category, units, images,
                     updated_at, created_at, logo)
 
     def get_meta_data(self):
@@ -116,7 +117,7 @@ class Parser:
 
             for child in data:
                 if child.tag == 'links':
-                    next = child.find('next').text
+                    # next = child.find('next').text
                     links.append(Links(next))
 
         return Meta_Data(total, count, per_page,
@@ -137,7 +138,7 @@ class Parser:
                     links.append(Links_cat(previous))
 
         return Meta_Data_cat(total, count, per_page,
-                         current_page, total_pages, links)
+                             current_page, total_pages, links)
 
         return Meta_Data(total, count, per_page,
                          current_page, total_pages)
@@ -172,23 +173,67 @@ def get_category():
         pass
 
 
+# get prerolls category
+def get_prerolls(name):
+    name_lst = []
+    prsr = Parser('latest.xml')
+    for cat in prsr.get_all_data():
+        print "=========", cat.slug
+        print '-----111---------'
+        for child in cat.subcategory:
+            print '------22222------', child.name
+            if child.name == name:
+                print '-----3333-----'
+                print '------444444------', cat.name
+                name_lst.append(cat.name)
+    return name_lst
+
+
+
+
+# def get_products_by_category(category, subcategory):
+#     pp = ProductParser('products.xml')
+#
+#     return [product for product in pp.get_products()
+#             if product.category == category and
+#             product.subcategory == subcategory]
+
+
 if __name__ == '__main__':
     # parser = Parser('latest.xml')
+    # category.xml is not a proper format so it will not parse
+    #
+    #
+    #
+    #
+    # category xml :: parsering
+    print 'category xml :: parsering..'
     # parser = Parser('category.xml')
-    parser = Parser('dispensary.xml')
+    # get_data = parser.get_all_data()
+    # for data in get_data:
+    #     data.show_data_details()
+    # meta = parser.get_meta_data()
+    # meta.show_meta_details()
 
-    get_data = parser.get_all_data()
+    # dispensary xml :: parsering
+    print 'dispensary xml :: parsering..'
+    prsr = Parser('latest.xml')
+    get_data = prsr.get_all_data()
     for data in get_data:
         data.show_data_details()
-    meta = parser.get_meta_data()
-    meta.show_meta_details()
+    # meta = parser.get_meta_data()
+    # meta.show_meta_details()
+
+    # xml sending my mail (categories.xml)
+    # parser = Parser('categories.xml')
 
     # only for category and dispensary(both) xml
-    print '(Both) :: category and dispensary xml'
-    parser = Parser('both(cat&dis).xml')
-    meta = parser.get_meta_data_all()
-    meta.show_meta_details()
+    # print '(Both) :: category and dispensary xml'
+    # parser = Parser('both(cat&dis).xml')
+    # meta = parser.get_meta_data_all()
+    # meta.show_meta_details()
 
     # get_category('Flowers', 'Sativa')
     # get_category()
     # get_id()
+    get_prerolls('Sativa')

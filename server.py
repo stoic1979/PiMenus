@@ -2,12 +2,12 @@ from flask import Flask, redirect, render_template, request, url_for
 import traceback
 from parser import Parser
 from api_manager import ApiManager
-from utils import read_logs, flog
+from utils import read_logs, flog, uptime
 from config import Config
 import os
 from data import get_vapes, get_syringes, get_accessories, get_concentrates, \
-    get_other, get_cat, get_satvia_first, get_satvia_second, get_sativa_flower, \
-    get_sativa
+    get_other, get_cat,  get_satvia_second, \
+    get_sativa_flower, get_sativa, get_indica
 
 app = Flask(__name__)
 parser = Parser('test_xml.xml')
@@ -21,7 +21,7 @@ def system_update():
 
         am = ApiManager(key)
         token = am.get_token()
-        xml = am.get_products_xml(token, 10)
+        xml = am.get_products_by_dispensary(token, '684')
 
         # write xml string in latest.xml
         f = open('latest.xml', 'w')
@@ -36,8 +36,9 @@ def system_update():
 
 @app.route('/system')
 def system():
-    templateData = {'title': 'System'}
-    return render_template("system.html", **templateData)
+    time = uptime()
+    template_data = {'title': 'System', 'time': time}
+    return render_template("system.html", **template_data)
 
 
 @app.route('/menus')
@@ -87,7 +88,8 @@ def home():
     config = Config()
     try:
         if config.get_theme() == 'Prerolls':
-            templateData = {'title': 'Home Page', 'first': get_satvia_first(),
+            templateData = {'title': 'Home Page', 'first': get_sativa(),
+                            'indica': get_indica(),
                             'second': get_satvia_second()}
             return render_template("prerolls.html", **templateData)
 
@@ -112,15 +114,16 @@ def home():
 
 @app.route('/inventory')
 def inventory():
-    data = parser.get_all_data()
-    for d in data:
-        print '', d.id
-        print '', d.name
-        # print '', d.category.xml
-        for cat in d.category:
-            print '', cat.id
-            print '', cat.name
-    templateData = {'title': 'Inventory', "all_data": data}
+    # data = parser.get_all_data()
+    # for d in data:
+    #     print '', d.id
+    #     print '', d.name
+    #     # print '', d.category.xml
+    #     for cat in d.category:
+    #         print '', cat.id
+    #         print '', cat.name
+    # templateData = {'title': 'Inventory', "all_data": data}
+    templateData = {'title': 'Inventory'}
     return render_template("inventory.html", **templateData)
 
 
@@ -135,8 +138,9 @@ def log():
 ###################################
 @app.route("/prerolls")
 def prerolls():
-
-    templateData = {'title': 'Home Page', 'first': get_satvia_first(),
+    for data in get_sativa():
+            print "++++++++++++++++++++++++++++", data
+    templateData = {'title': 'Home Page', 'first': get_sativa(), 'indica': get_indica(),
                     'second': get_satvia_second()}
     return render_template("prerolls.html", **templateData)
 
